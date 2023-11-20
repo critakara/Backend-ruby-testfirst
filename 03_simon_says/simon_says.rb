@@ -11,25 +11,25 @@ end
 def repeat(word, times = 2)
   repeated = word + " " + word
   if times > 2
-  for i in 3..times
-    repeated = repeated + " " + word
-  end
+    (3..times).each do |i|
+      repeated = repeated + " " + word
+    end
   else
   end
-  return repeated
+  repeated
 end
 
-def start_of_word(word, letters)
-  if letters > 1
-    return word[0, letters]
-  else
-    return word[0]
-  end
+def start_of_word(word, times = 2)
+  word[0..times-1]
+  # if letters > 1
+  #   return word[0, letters]
+  # else
+  #   return word[0]
+  # end
 end
 
 def first_word(phrase)
-  word = phrase.split()
-  return word[0]
+  phrase.split[0]
 end
 
 def titleize(title)
@@ -45,25 +45,22 @@ def titleize(title)
   # wait is this doing all prepositions
   # nightmare you'd need a whole ass dictionary for that???
   # ok just need to combine it back up
-  titled = ""
+  result = ""
   littleWords = ["a", "an", "and", "but", "for", "or", "nor", "on", "over",
                  "at", "from", "by", "to", "the"]
   words = title.split()
-  titled = words[0].capitalize
+  result = words[0].capitalize
   
   words.drop(1).each do |i|
     if littleWords.include?(i)
     # combine it
-      titled = titled + " " + i
+      result = result + " " + i
     else
-      titled = titled + " " + i.capitalize
+      result = result + " " + i.capitalize
     end
   end
-    return titled
+    return result
 end
-
-
-
 
 
 

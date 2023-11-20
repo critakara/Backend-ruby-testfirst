@@ -4,16 +4,13 @@
 # ok a/b and then add a % b as the remainder?
 # a/b no decimals, a % b
 
-
 class Timer
   #write your code here
   attr_accessor :seconds, :minutes, :hours, :time_string
 
-  def initialize
-    
+  def initialize    
     @seconds = 0
-    @time_string = "00:00:00"
-    
+    @time_string = "00:00:00"   
   end
   
   def time_string
@@ -29,16 +26,9 @@ class Timer
     hours = 0
     minutes = 0
     
-    
     seconds = @seconds % 60
     minutes = (@seconds/60) % 60
     hours = @seconds/3600
-
-    
-    
-    
-    
-    
 
     if seconds < 10
       secsString = seconds.to_s
@@ -62,9 +52,6 @@ class Timer
     timeString = hoursString + ":" + minutesString + ":" + secsString
 
     @time_string = timeString
-   
-  
-  
     
 #    yield @time_string
   end
